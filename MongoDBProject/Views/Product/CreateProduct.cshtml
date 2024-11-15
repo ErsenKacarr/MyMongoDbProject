@@ -1,0 +1,35 @@
+﻿@model MongoDBProject.Dtos.ProductDtos.CreateProductDto
+
+@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container">
+    <br /><br />
+    <form method="post" enctype="multipart/form-data">
+        <div class="alert alert-info">Yeni Ürün Ekleme</div>
+        <br />
+        <label>Ürün Adı</label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <br />
+        <label>Ürün Fiyatı</label>
+        <input type="text" asp-for="Price" class="form-control" />
+        <br />
+        <label>Ürün Stok Sayısı</label>
+        <br />
+        <input type="text" asp-for="Stock" class="form-control" />
+        <br />
+        <label>Ürün Görseli Seçin</label>
+        <input type="file" class="form-control border" name="ImageUrl" />
+        <br />      
+        <input name="SavedUrl" type="hidden" class="form-control" />
+        <input name="SavedFileName" type="hidden" class="form-control" />       
+        <label>Kategori Seçiniz</label>
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.Categories, "Seçiniz...", new { @class = "form-control" })
+        <br />
+        <button type="submit" class="btn btn-dark">Ürünü Ekle</button>
+    </form>
+</div>
+
+

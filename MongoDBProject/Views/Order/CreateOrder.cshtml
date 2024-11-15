@@ -1,0 +1,28 @@
+﻿@model MongoDBProject.Dtos.OrderDtos.CreateOrderDto
+
+@{
+    ViewData["Title"] = "CreateOrder";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <div class="alert alert-info">Yeni Sipariş Ekleme</div>
+        <br />
+        <label>Ürün Adını seçin</label>
+        @Html.DropDownListFor(x => x.ProductId, (List<SelectListItem>)ViewBag.Product, "Seçiniz...", new { @class = "form-control" })
+        <br />
+        <label>Ürün Adet</label>
+        <input type="text" asp-for="OrderProductPiece" class="form-control" />
+        <br />
+        <label>Müşteri Seçin</label>
+        @Html.DropDownListFor(x => x.CustomerId, (List<SelectListItem>)ViewBag.Customers, "Seçiniz...", new { @class = "form-control" })
+        <br />
+        <label>Sipariş Tarihi</label>
+        <input type="text" asp-for="OrderDate" class="form-control" />
+        <br />
+        <button class="btn btn-dark">Sipariş Oluştur</button>
+    </form>
+</div>
+

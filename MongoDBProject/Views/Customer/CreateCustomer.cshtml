@@ -1,0 +1,23 @@
+﻿@model MongoDBProject.Dtos.CustomerDtos.CreateCustomerDto
+
+@{
+    ViewData["Title"] = "CreateCustomer";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container">
+    <br />
+    <form method="post">
+        <label>Müşteri Adı Soyadı</label>
+        <input type="text" asp-for="CustomerNameSurname" class="form-control" />
+        <br />
+        <label>Müşteri Şehir</label>
+        <input type="text" asp-for="CustomerCity" class="form-control" />
+        <br />       
+        <label>Müşteri Telefon</label>
+        <input type="text" asp-for="CustomerPhone" class="form-control" />
+        <br />
+        <button class="btn btn-info">Müşteri Ekle</button>
+    </form>
+</div>
+
